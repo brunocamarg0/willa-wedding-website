@@ -4,42 +4,30 @@ import { Heart, Camera, Eye } from "lucide-react";
 
 const Gallery = () => {
   // Placeholder gallery items
-  const galleryItems = [
+  const portfolioImages = [
     {
-      id: 1,
-      title: "Casamento Clássico",
-      category: "Cerimônia Religiosa",
-      description: "Elegância atemporal em uma cerimônia emocionante"
+      src: "/portfolio/dog.jpg",
+      alt: "Cachorro fofo vestido para casamento"
     },
     {
-      id: 2,
-      title: "Casamento no Jardim",
-      category: "Cerimônia ao Ar Livre",
-      description: "Romance natural em meio à natureza"
+      src: "/portfolio/bouquet.jpg",
+      alt: "Noiva jogando buquê para madrinhas"
     },
     {
-      id: 3,
-      title: "Casamento Moderno",
-      category: "Contemporâneo",
-      description: "Sofisticação moderna com toques únicos"
+      src: "/portfolio/hug.jpg",
+      alt: "Abraço emocionante entre pai e filho no casamento"
     },
     {
-      id: 4,
-      title: "Mini Wedding",
-      category: "Cerimônia Íntima",
-      description: "Intimidade e charme em cada detalhe"
+      src: "/portfolio/flowerboy.jpg",
+      alt: "Rapaz jogando pétalas no corredor do casamento"
     },
     {
-      id: 5,
-      title: "Casamento Vintage",
-      category: "Clássico",
-      description: "Nostalgia romântica em cada elemento"
+      src: "/portfolio/blessing.jpg",
+      alt: "Momento de bênção durante a cerimônia de casamento"
     },
     {
-      id: 6,
-      title: "Destination Wedding",
-      category: "Destino",
-      description: "Aventura romântica em local paradisíaco"
+      src: "/portfolio/cake.jpg",
+      alt: "Mesa de bolo e doces decorada para casamento"
     }
   ];
 
@@ -61,17 +49,15 @@ const Gallery = () => {
 
           {/* Gallery Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {galleryItems.map((item) => (
-              <Card key={item.id} className="group overflow-hidden border-0 shadow-soft hover:shadow-elegant transition-all duration-300">
-                {/* Image Placeholder */}
+            {portfolioImages.map((img, idx) => (
+              <Card key={idx} className="group overflow-hidden border-0 shadow-soft hover:shadow-elegant transition-all duration-300">
                 <div className="relative aspect-[4/3] bg-gradient-secondary overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Camera className="h-12 w-12 text-primary/50 mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">{item.title}</p>
-                    </div>
-                  </div>
-                  
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
@@ -79,23 +65,6 @@ const Gallery = () => {
                       Ver Detalhes
                     </Button>
                   </div>
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
-                      {item.category}
-                    </span>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
               </Card>
             ))}

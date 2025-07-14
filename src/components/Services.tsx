@@ -30,19 +30,13 @@ const Services = () => {
       icon: Sparkles,
       title: "Day Wedding",
       description: "Coordenação especializada para casamentos durante o dia com charme e elegância únicos.",
-      features: ["Ambientação diurna", "Decoração especial", "Timeline otimizada"]
+      features: ["Ambientação diurna", "Timeline otimizada"]
     },
     {
       icon: MapPin,
       title: "Assessoria no Local",
       description: "Supervisão e coordenação apenas no dia do casamento para garantir que tudo saia perfeito.",
       features: ["Coordenação do dia", "Gestão de fornecedores", "Suporte aos noivos"]
-    },
-    {
-      icon: Flower,
-      title: "Decoração & Ambientação",
-      description: "Criação de ambientes únicos que refletem a personalidade e estilo do casal.",
-      features: ["Projetos personalizados", "Flores e arranjos", "Iluminação especial"]
     },
     {
       icon: Heart,
